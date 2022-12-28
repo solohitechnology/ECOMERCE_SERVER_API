@@ -12,11 +12,11 @@ const orderRoutes = require('./routes/order');
 
 dotenv.config();
 
-// mongoose.connect(process.env.MONGO_URL)
-//     .then(() => console.log('DB connection successfull'))
-//     .catch((e) => {
-//         console.log(e);
-//     });
+mongoose.connect(process.env.MONGO_URL)
+    .then(() => console.log('DB connection successfull'))
+    .catch((e) => {
+        console.log(e);
+    });
 
 app.use(express.json());
 app.use('/api/auth', authRoutes)
